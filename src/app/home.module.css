@@ -75,7 +75,7 @@
 .heroArch {
   width: clamp(260px, 32vw, 500px);
   aspect-ratio: 1;
-  border-radius: var(--arch);
+  border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--shadow-hero-image);
   position: relative;
