@@ -1,0 +1,133 @@
+.page {
+  background: var(--contact-cream);
+  min-height: 100vh;
+  padding-top: 100px;
+}
+.inner {
+  padding: 60px 8% 100px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 10%;
+  align-items: start;
+}
+
+/* Left */
+.heading {
+  font-size: clamp(44px, 5vw, 78px);
+  color: var(--brown-ink);
+  margin-bottom: 48px;
+}
+.details {
+  font-family: var(--font-body);
+  line-height: 2.15;
+  color: var(--brown-ink);
+}
+.detailsName {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.detailsLine {
+  font-weight: 300;
+  font-size: 15px;
+}
+.detailsAddress {
+  margin-top: 10px;
+}
+.map {
+  margin-top: 30px;
+  height: 170px;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-map);
+  position: relative;
+}
+
+/* Right — form */
+.field {
+  margin-bottom: 36px;
+}
+.error {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--error-red);
+  margin-top: 5px;
+}
+.submitRow {
+  display: flex;
+  justify-content: flex-end;
+}
+.submit {
+  background: var(--brown-ink);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 13px 48px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.22s ease;
+}
+.submit:hover {
+  background: var(--brown-dark);
+}
+
+/* Success */
+.success {
+  padding-top: 40px;
+  text-align: center;
+}
+.successStar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.successHeading {
+  font-size: 36px;
+  color: var(--brown-ink);
+  margin-bottom: 16px;
+}
+.successText {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--brown-ink);
+  line-height: 1.75;
+}
+.sendAnother {
+  margin-top: 32px;
+  background: none;
+  border: 1.5px solid var(--brown-ink);
+  border-radius: var(--radius-pill);
+  padding: 10px 32px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+  cursor: pointer;
+}
+
+/* Bottom row */
+.bottom {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(95, 46, 19, 0.2);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--brown-ink);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

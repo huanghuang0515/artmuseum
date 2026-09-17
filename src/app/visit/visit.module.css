@@ -1,0 +1,164 @@
+.page {
+  background: var(--culture-cream);
+}
+
+/* Hero split */
+.hero {
+  display: flex;
+  min-height: 88vh;
+}
+.heroImgWrap {
+  flex: 0 0 45%;
+  overflow: hidden;
+  position: relative;
+}
+.heroText {
+  flex: 1;
+  padding: 130px 7% 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heroHeading {
+  font-size: clamp(40px, 5.5vw, 88px);
+  color: var(--brown-ink);
+  margin-bottom: 30px;
+}
+.heroBody {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.88;
+  color: var(--brown-ink);
+  text-align: justify;
+  margin-bottom: 32px;
+}
+
+/* Hours & Admission */
+.hoursSection {
+  padding: 80px 8%;
+}
+.hoursCard {
+  background: #fff;
+  padding: 60px 64px;
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+}
+.hoursHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 52px;
+}
+.hoursHeading {
+  font-size: clamp(28px, 4vw, 66px);
+  color: var(--brown-ink);
+}
+.hoursGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.colHeading {
+  font-family: var(--font-subhead);
+  font-size: 22px;
+  color: var(--brown-ink);
+  margin-bottom: 20px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(95, 46, 19, 0.1);
+}
+.rowLabel {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--brown-ink);
+}
+.rowLabelClosed {
+  font-weight: 700;
+}
+.rowValue {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+}
+.rowValueClosed {
+  color: var(--error-red);
+  font-weight: 600;
+}
+
+/* Tradition */
+.tradition {
+  padding: 60px 8% 80px;
+}
+.traditionHeading {
+  font-size: clamp(40px, 5vw, 86px);
+  color: var(--brown-ink);
+  margin-bottom: 24px;
+}
+.traditionRule {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.55);
+  margin-bottom: 36px;
+}
+.traditionBody {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.88;
+  color: var(--brown-ink);
+  max-width: 840px;
+  text-align: justify;
+  margin-bottom: 52px;
+}
+.photoPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.photo {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+.photo :global(img) {
+  transition: transform 0.4s ease;
+}
+.photo:hover :global(img) {
+  transform: scale(1.04);
+}
+.interior {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    min-height: 0;
+  }
+  .heroImgWrap {
+    flex: 1 1 auto;
+    height: 46vh;
+  }
+  .heroText {
+    padding: 56px 8% 56px;
+  }
+  .hoursCard {
+    padding: 40px 28px;
+  }
+  .hoursGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .photoPair {
+    grid-template-columns: 1fr;
+  }
+}

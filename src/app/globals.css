@@ -1,0 +1,209 @@
+/* ============================================================
+   QALISSO Museum — global styles & design tokens
+   Ported from design_handoff_qalisso_museum (index.html + README).
+   Colors, radii, shadows and shared classes live here as tokens
+   so components consume them rather than re-deriving values.
+   ============================================================ */
+
+:root {
+  /* ---- Color tokens (README "Design Tokens" table) ---- */
+  --brown-ink: #5f2e13;        /* primary text, buttons, borders on light */
+  --brown-dark: #3d1a08;       /* primary button hover */
+  --events-ink: #431c07;       /* all text on the Events page */
+  --hero-brown: #9f7c53;       /* Home hero background */
+  --culture-cream: #efd2b0;    /* Home culture section, Visit page */
+  --stories-tan: #c2a786;      /* Home stories, Collections page */
+  --collections-dark: #544534; /* Home collections-preview section */
+  --exhibitions-tan: #dcc1a1;  /* Exhibitions page */
+  --events-tan: #b28f65;       /* Events page */
+  --contact-cream: #efd7bb;    /* Contact page, Tickets page */
+  --panel-cream: #faf4ec;      /* input fills on Tickets */
+  --footer: #222222;
+  --nav-scrolled: rgba(36, 14, 2, 0.92);
+  --white: #ffffff;
+  --accent-green: #295b37;     /* ticket glyph, POPULAR flag */
+  --error-red: #c0392b;        /* validation errors, CLOSED */
+  --highlight: rgba(214, 185, 150, 0.6); /* active pagination block */
+
+  /* ---- Type tokens ----
+     --font-display is the single seam for the brand face. It currently
+     resolves to Cinzel (a licensed-Qalisso stand-in). To adopt the real
+     Qalisso, load it in layout.tsx and point this variable at it — no
+     component changes needed. */
+  --font-display: var(--font-cinzel), serif;
+  --font-subhead: var(--font-marcellus), serif;
+  --font-body: var(--font-roboto), sans-serif;
+
+  /* ---- Radii ---- */
+  --radius-panel: 3px;
+  --radius-input: 4px;
+  --radius-card: 6px;
+  --radius-pill: 40px;
+  --arch: 50% 50% 0 50%; /* signature three-corner arch */
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --shadow-card-selected: 0 4px 22px rgba(95, 46, 19, 0.18);
+  --shadow-summary: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-panel: 0 4px 40px rgba(0, 0, 0, 0.06);
+  --shadow-map: 0 4px 24px rgba(0, 0, 0, 0.1);
+  --shadow-hero-image: 0 24px 80px rgba(0, 0, 0, 0.28);
+
+  /* ---- Layout ---- */
+  --gutter: 8%;
+  --breakpoint-mobile: 900px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background: var(--culture-cream);
+  color: var(--brown-ink);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--culture-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brown-ink);
+  border-radius: 3px;
+}
+
+/* ---- Page fade transition (README "Page transition") ----
+   Applied via app/template.tsx, which remounts per navigation so the
+   animation replays on every route change. */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.page-fade {
+  animation: pageFadeIn 0.5s ease forwards;
+}
+
+/* ---- Nav top-edge scrim (README accessibility note) ----
+   Keeps the white nav text legible over light heroes and light-background
+   pages before scroll; fades out once the nav gains its scrolled background.
+   Defined here in the global stylesheet (not Navbar.module.css) so it always
+   ships with every route — a CSS-Module ::before on the fixed nav tripped a
+   Next.js chunk-splitting bug that dropped the whole layout stylesheet. */
+.qm-nav-scrim::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 104px;
+  background: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+.qm-nav-scrim.qm-nav-scrolled::before {
+  opacity: 0;
+}
+
+/* ---- Shared display heading ---- */
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* ---- Arrow link: gap grows on hover so the arrow slides away ---- */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--brown-ink);
+  transition: gap 0.25s ease;
+  text-decoration: none;
+}
+.arrow-link:hover {
+  gap: 18px;
+}
+
+/* ---- Underline form field ---- */
+.mu-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(95, 46, 19, 0.35);
+  padding: 12px 0;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--brown-ink);
+  outline: none;
+  transition: border-color 0.25s ease;
+  resize: none;
+}
+.mu-input:focus {
+  border-bottom-color: var(--brown-ink);
+}
+.mu-input::placeholder {
+  color: rgba(95, 46, 19, 0.45);
+}
+
+/* ---- Image zoom on hover (wrap image in .exh-card) ---- */
+.exh-card {
+  overflow: hidden;
+  cursor: pointer;
+}
+.exh-card:hover .exh-img {
+  transform: scale(1.05);
+}
+.exh-img {
+  transition: transform 0.45s ease;
+}
+
+/* ---- Card lift on hover ---- */
+.card-lift {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .page-fade,
+  .exh-img,
+  .card-lift,
+  .arrow-link {
+    animation: none;
+    transition: none;
+  }
+}

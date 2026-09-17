@@ -1,0 +1,188 @@
+.page {
+  background: var(--contact-cream);
+  min-height: 100vh;
+  padding-top: 100px;
+}
+.inner {
+  padding: 72px 8% 120px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.star {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+.heading {
+  font-size: clamp(40px, 5vw, 72px);
+  color: var(--brown-ink);
+  margin-bottom: 16px;
+}
+.subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--brown-ink);
+  line-height: 1.75;
+  margin-bottom: 44px;
+}
+
+/* Ticket card */
+.card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-summary);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+.refLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-ink);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+.ref {
+  font-family: var(--font-subhead);
+  font-size: 30px;
+  color: var(--brown-ink);
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+}
+.metaLabel {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brown-ink);
+  opacity: 0.55;
+  margin-bottom: 3px;
+}
+.metaValue {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+}
+.qrWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.qr {
+  width: 148px;
+  height: 148px;
+  border-radius: 8px;
+  background: #fff;
+}
+.qrCaption {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--brown-ink);
+  opacity: 0.6;
+}
+
+/* Lines */
+.lines {
+  margin-top: 28px;
+  text-align: left;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(95, 46, 19, 0.12);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+}
+.lineQty {
+  opacity: 0.6;
+}
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 18px;
+}
+.totalLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+  opacity: 0.7;
+}
+.totalAmount {
+  font-family: var(--font-subhead);
+  font-size: 30px;
+  color: var(--brown-ink);
+}
+
+.note {
+  margin-top: 28px;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--brown-ink);
+  opacity: 0.75;
+  line-height: 1.7;
+}
+.actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btnPrimary {
+  background: var(--brown-ink);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 13px 36px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.btnGhost {
+  background: none;
+  border: 1.5px solid var(--brown-ink);
+  border-radius: var(--radius-pill);
+  padding: 12px 32px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.empty {
+  padding: 40px 0;
+}
+
+@media (max-width: 620px) {
+  .card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+  .metaGrid {
+    text-align: left;
+  }
+}
