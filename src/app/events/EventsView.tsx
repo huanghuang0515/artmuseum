@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ArrowRight from "@/components/ArrowRight";
+import CoverImage from "@/components/CoverImage";
 import type { EventItem } from "@/content/types";
 import styles from "./events.module.css";
 
@@ -22,14 +23,10 @@ export default function EventsView({ events }: { events: EventItem[] }) {
     <div className={styles.page}>
       {/* Hero */}
       <section className={styles.hero}>
-        <div
-          className={styles.heroBg}
-          style={{
-            backgroundImage: "url(/assets/event-hero.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        <div className={styles.heroBg}>
+          {/* next/image so the src picks up basePath on static/subpath hosting */}
+          <CoverImage src="/assets/event-hero.jpg" alt="Events at QALISSO Museum" priority sizes="100vw" />
+        </div>
         <div className={styles.heroScrim} />
         <div className={styles.heroLine} />
         <h1 className={`display-heading ${styles.heroTitle}`}>EVENTS</h1>
