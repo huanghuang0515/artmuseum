@@ -1,0 +1,481 @@
+.page {
+  background: var(--contact-cream);
+  min-height: 100vh;
+  padding-top: 100px;
+}
+.inner {
+  padding: 60px 8% 100px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.eyebrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--brown-ink);
+  letter-spacing: 0.18em;
+}
+.title {
+  font-size: clamp(46px, 6vw, 92px);
+  color: var(--brown-ink);
+  margin-bottom: 14px;
+}
+.intro {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--brown-ink);
+  opacity: 0.75;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Stepper */
+.stepper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stepNode {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(95, 46, 19, 0.18);
+  color: var(--brown-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.stepNodeActive {
+  background: var(--brown-ink);
+  color: #fff;
+}
+.stepLabel {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown-ink);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+.stepLabelActive {
+  opacity: 1;
+}
+.stepConnector {
+  width: 80px;
+  height: 1px;
+  background: rgba(95, 46, 19, 0.25);
+  margin: 16px 22px 0;
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Step 1 — ticket cards */
+.ticketList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ticketCard {
+  background: #fff;
+  padding: 22px 28px;
+  border-radius: var(--radius-card);
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 24px;
+  align-items: center;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease;
+  position: relative;
+}
+.ticketCardSelected {
+  box-shadow: var(--shadow-card-selected);
+  border: 1.5px solid var(--brown-ink);
+}
+.popular {
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  background: var(--accent-green);
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.ticketName {
+  font-family: var(--font-subhead);
+  font-size: 20px;
+  color: var(--brown-ink);
+  margin-bottom: 5px;
+}
+.ticketDesc {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--brown-ink);
+  opacity: 0.7;
+  line-height: 1.55;
+}
+.ticketPrice {
+  font-family: var(--font-subhead);
+  font-size: 24px;
+  color: var(--brown-ink);
+  min-width: 70px;
+  text-align: right;
+}
+.qtyStepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qtyBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1.5px solid rgba(95, 46, 19, 0.25);
+  background: transparent;
+  color: var(--brown-ink);
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.qtyBtnActive {
+  border-color: var(--brown-ink);
+  background: var(--brown-ink);
+  color: #fff;
+}
+.qtyCount {
+  min-width: 24px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--brown-ink);
+}
+
+/* Steps 2 & 3 panels */
+.panel {
+  background: #fff;
+  padding: 40px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+.panelHeading {
+  font-family: var(--font-subhead);
+  font-size: 24px;
+  color: var(--brown-ink);
+  margin-bottom: 6px;
+}
+.panelNote {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--brown-ink);
+  opacity: 0.7;
+  margin-bottom: 28px;
+}
+.fieldLabel {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--brown-ink);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 10px;
+}
+.dateField {
+  margin-bottom: 32px;
+}
+.dateInput {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-input);
+  border: 1.5px solid rgba(95, 46, 19, 0.3);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--brown-ink);
+  background: var(--panel-cream);
+  outline: none;
+}
+.slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.slot {
+  padding: 12px 0;
+  border-radius: var(--radius-input);
+  cursor: pointer;
+  background: var(--panel-cream);
+  color: var(--brown-ink);
+  border: 1.5px solid rgba(95, 46, 19, 0.25);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+.slotSelected {
+  background: var(--brown-ink);
+  color: #fff;
+  border-color: var(--brown-ink);
+}
+.detailsGroup {
+  margin-bottom: 24px;
+}
+.paymentDivider {
+  padding-top: 18px;
+  border-top: 1px solid rgba(95, 46, 19, 0.15);
+}
+.paymentHeading {
+  font-family: var(--font-subhead);
+  font-size: 18px;
+  color: var(--brown-ink);
+  margin-bottom: 18px;
+}
+.cardPair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Step nav */
+.stepNav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+.btnGhost {
+  background: none;
+  border: 1.5px solid var(--brown-ink);
+  border-radius: var(--radius-pill);
+  padding: 12px 32px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--brown-ink);
+  cursor: pointer;
+}
+.btnPrimary {
+  background: var(--brown-ink);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 13px 36px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.btnPrimaryDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Order summary */
+.summaryCol {
+  position: sticky;
+  top: 120px;
+}
+.summaryCard {
+  background: #fff;
+  padding: 32px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-summary);
+}
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.summaryGlyph {
+  color: var(--accent-green);
+  font-size: 18px;
+}
+.summaryTitle {
+  font-family: var(--font-subhead);
+  font-size: 20px;
+  color: var(--brown-ink);
+}
+.summaryEmpty {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--brown-ink);
+  opacity: 0.6;
+  line-height: 1.7;
+}
+.summaryLine {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(95, 46, 19, 0.1);
+}
+.summaryLineName {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown-ink);
+}
+.summaryLineQty {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--brown-ink);
+  opacity: 0.55;
+}
+.summaryLineTotal {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown-ink);
+}
+.summaryDateBlock {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(95, 46, 19, 0.1);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--brown-ink);
+}
+.summaryDateRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.summaryDateRow:last-child {
+  margin-bottom: 0;
+}
+.summaryMuted {
+  opacity: 0.6;
+}
+.summaryTotalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 18px;
+}
+.summaryTotalLabel {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown-ink);
+  opacity: 0.7;
+}
+.summaryTotalAmount {
+  font-family: var(--font-subhead);
+  font-size: 32px;
+  color: var(--brown-ink);
+}
+.reassurance {
+  margin-top: 18px;
+  padding: 18px 22px;
+  background: rgba(95, 46, 19, 0.06);
+  border-radius: var(--radius-card);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--brown-ink);
+  line-height: 1.7;
+}
+.reassurance strong {
+  font-weight: 500;
+}
+
+/* summary toggle — mobile only */
+.summaryToggle {
+  display: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .stepper {
+    flex-wrap: wrap;
+    gap: 12px 0;
+  }
+  .stepConnector {
+    width: 32px;
+    margin: 16px 12px 0;
+  }
+  .stepLabel {
+    display: none;
+  }
+  .cardPair,
+  .slots {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Order summary → in-flow accordion, placed above the step content */
+  .summaryCol {
+    position: static;
+    order: -1;
+  }
+  .summaryToggle {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border: none;
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+    padding: 18px 24px;
+    cursor: pointer;
+    box-shadow: var(--shadow-summary);
+    font-family: var(--font-subhead);
+    font-size: 18px;
+    color: var(--brown-ink);
+  }
+  .summaryToggleTotal {
+    font-family: var(--font-subhead);
+    font-size: 20px;
+  }
+  .summaryCard {
+    border-radius: 0 0 var(--radius-card) var(--radius-card);
+    box-shadow: var(--shadow-summary);
+  }
+  .summaryCardCollapsed {
+    display: none;
+  }
+  .summaryCardHeaderHidden {
+    display: none; /* hide the in-card header on mobile; toggle replaces it */
+  }
+}
+
+@media (max-width: 520px) {
+  .ticketCard {
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+  }
+  .qtyStepper {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+  .slots {
+    grid-template-columns: 1fr 1fr;
+  }
+}
