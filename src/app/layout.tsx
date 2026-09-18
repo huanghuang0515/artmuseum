@@ -47,8 +47,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${cinzel.variable} ${marcellus.variable} ${roboto.variable}`}>
+    // Font variables go on <html> so they are defined on :root, where
+    // globals.css resolves --font-display/--font-subhead/--font-body. A var()
+    // inside a custom property is substituted on the element that declares it,
+    // so these must not live on <body>.
+    <html lang="en" className={`${cinzel.variable} ${marcellus.variable} ${roboto.variable}`}>
+      <body>
         <Navbar />
         {children}
         <Footer />
